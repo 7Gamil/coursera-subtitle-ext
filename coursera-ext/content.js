@@ -1,6 +1,6 @@
 document.addEventListener('keydown', function(event) {
-    // Check if the 'c' key was pressed and we are not typing in an input field.
-    if (event.key.toLowerCase() === 'c' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+    // Check if the 'c' key was pressed without Ctrl/Cmd and we are not typing in an input field.
+    if (event.key.toLowerCase() === 'c' && !event.ctrlKey && !event.metaKey && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
 
         // Prevent any default browser action for the 'c' key
         event.preventDefault();
